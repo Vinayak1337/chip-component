@@ -24,7 +24,7 @@ const InputSuggestion = () => {
 	return (
 		<div
 			ref={ref}
-			className='flex snap-scroll-container overflow-x-hidden overflow-y-scroll max-h-48 h-0 w-max flex-col rounded shadow transition-all duration-500 ease-in bg-gray-100'>
+			className='flex snap-scroll-container overflow-x-hidden overflow-y-scroll max-h-48 h-0 w-fit flex-col rounded shadow transition-all duration-500 ease-in bg-gray-100'>
 			{users.map(user => (
 				<Suggestion
 					key={user.id + '-input-suggestions'}
@@ -52,7 +52,7 @@ const Suggestion: FC<User & { input: string }> = ({
 	return (
 		<div
 			onClick={addTOChip}
-			className='p-2 flex gap-2 items-center cursor-pointer rounded hover:bg-slate-300 justify-between flex-grow w-full'>
+			className='p-2 flex gap-2 items-center cursor-pointer rounded hover:bg-slate-300 justify-between w-fit'>
 			<div className='flex gap-2 items-center'>
 				<Image
 					className='rounded-full bg-gray-400'
