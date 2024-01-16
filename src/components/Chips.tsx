@@ -14,7 +14,7 @@ const Chips = () => {
 	const selectedChip = useSelectedChip();
 
 	return (
-		<div className='flex gap-2 flex-wrap w-fit'>
+		<>
 			{chips.map(chip => (
 				<Chip
 					isSelected={chip.id === selectedChip}
@@ -22,7 +22,7 @@ const Chips = () => {
 					{...chip}
 				/>
 			))}
-		</div>
+		</>
 	);
 };
 
@@ -41,7 +41,7 @@ const Chip: FC<User & { isSelected: boolean }> = ({
 	return (
 		<div
 			className={clsx(
-				'flex max-w-44 gap-1 flex-grow w-max items-center justify-between rounded-[32px] bg-zinc-300 pr-2',
+				'flex max-w-44 gap-1 flex-grow w-fit items-center justify-between rounded-[32px] bg-zinc-300 pr-2',
 				{
 					'border border-sky-500': isSelected
 				}

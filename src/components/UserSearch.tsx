@@ -4,7 +4,7 @@ import Input from './Input';
 
 const UserSearch = () => (
 	<UserSearchProvider>
-		<div className='flex gap-1 min-w-48 md:w-full max-w-96 border-b border-b-sky-500'>
+		<div className='flex flex-wrap gap-1 min-w-48 md:w-full max-w-[30rem] border-b border-b-sky-500'>
 			<Chips />
 			<Input />
 		</div>

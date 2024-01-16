@@ -52,7 +52,7 @@ const Suggestion: FC<User & { input: string }> = ({
 	return (
 		<div
 			onClick={addTOChip}
-			className='p-2 flex gap-2 items-center cursor-pointer rounded hover:bg-slate-300 justify-between w-fit'>
+			className='p-2 flex gap-2 items-center cursor-pointer rounded hover:bg-slate-300 justify-between w-full'>
 			<div className='flex gap-2 items-center'>
 				<Image
 					className='rounded-full bg-gray-400'
@@ -62,13 +62,13 @@ const Suggestion: FC<User & { input: string }> = ({
 					height={40}
 				/>
 				<p
-					className='text-base font-medium w-full min-w-44 truncate'
+					className='font-medium w-full text-sm truncate'
 					dangerouslySetInnerHTML={{
 						__html: input ? getNameSplit(name, input) : name
 					}}
 				/>
 			</div>
-			<p className='min-w-44 hidden sm:block truncate text-right lowercase text-base font-medium text-gray-400'>
+			<p className='hidden sm:block truncate text-right lowercase text-xs font-medium text-gray-400'>
 				{email}
 			</p>
 		</div>
@@ -79,5 +79,5 @@ const getNameSplit = (name: string, input: string) =>
 	name.replace(
 		RegExp(input.trim().replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&'), 'gi'),
 		val =>
-			`<span class='text-gray-400 font-medium text-sm tracking-widest'>${val}</span>`
+			`<span class='text-gray-400 font-medium text-xs tracking-widest'>${val}</span>`
 	);

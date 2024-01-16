@@ -51,15 +51,15 @@ const Input = () => {
 			ref={wrapperRef}
 			id='chip-input'
 			onFocus={handleFocus}
-			className='w-full relative h-10 self-end flex flex-col'>
+			className='relative h-10 self-end flex flex-col flex-grow w-28'>
 			<input
 				type='text'
-				className='min-w-28 w-full h-10 p-2 outline-none caret-sky-500 bg-transparent'
+				className='w-full h-10 p-2 outline-none caret-sky-500 bg-transparent'
 				onKeyDown={handleKeyDown}
 				onChange={handleChange}
 				value={input}
 			/>
-			<div onClick={handleFocus} className='absolute z-20 top-11 right-0'>
+			<div onClick={handleFocus} className='absolute z-20 top-11 left-0'>
 				{isFocused && <InputSuggestion />}
 			</div>
 		</div>
